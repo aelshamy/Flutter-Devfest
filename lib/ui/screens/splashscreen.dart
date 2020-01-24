@@ -28,8 +28,8 @@ class SplashScreenState extends State<SplashScreen> {
   }
 
   startTime() async {
-    var _duration = new Duration(seconds: 3);
-    return new Timer(_duration, navigationPage);
+    var _duration = Duration(seconds: 3);
+    return Timer(_duration, navigationPage);
   }
 
   void navigationPage() {
@@ -70,15 +70,13 @@ class SplashScreenState extends State<SplashScreen> {
       body: Stack(
         fit: StackFit.expand,
         children: <Widget>[
-          new AspectRatio(
+          if (playerController != null)
+            AspectRatio(
               aspectRatio: 9 / 16,
-              child: Container(
-                child: (playerController != null
-                    ? VideoPlayer(
-                        playerController,
-                      )
-                    : Container()),
-              )),
+              child: VideoPlayer(
+                playerController,
+              ),
+            ),
         ],
       ),
     );
