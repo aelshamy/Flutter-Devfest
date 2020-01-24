@@ -12,8 +12,7 @@ class HomeScreen extends StatefulWidget {
   _HomeScreenState createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen>
-    with SingleTickerProviderStateMixin {
+class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateMixin {
   AnimationController animationController;
 
   Animation<double> animation;
@@ -43,7 +42,7 @@ class _HomeScreenState extends State<HomeScreen>
     var size = MediaQuery.of(context).size;
     return cirAn
         ? CircularRevealAnimation(
-            center: Offset(size.height / 15, size.width / 3.5),
+            centerOffset: Offset(size.height / 15, size.width / 3.5),
             animation: animation,
             child: homeBody(
               themeProvider,
@@ -271,9 +270,7 @@ class _HomeScreenState extends State<HomeScreen>
                     });
                     themeProvider.darkTheme = !themeProvider.darkTheme;
 
-                    if (animationController.status == AnimationStatus.forward ||
-                        animationController.status ==
-                            AnimationStatus.completed) {
+                    if (animationController.status == AnimationStatus.forward || animationController.status == AnimationStatus.completed) {
                       animationController.reset();
                       animationController.forward();
                     } else {
@@ -284,15 +281,12 @@ class _HomeScreenState extends State<HomeScreen>
                     height: MediaQuery.of(context).size.height / 5.5,
                     width: MediaQuery.of(context).size.height / 15,
                     decoration: new BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(30),
-                          bottomRight: Radius.circular(30)),
+                      borderRadius: BorderRadius.only(bottomLeft: Radius.circular(30), bottomRight: Radius.circular(30)),
                       shape: BoxShape.rectangle,
                       color: Theme.of(context).hoverColor,
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.only(
-                          left: 14, right: 14, bottom: 28),
+                      padding: const EdgeInsets.only(left: 14, right: 14, bottom: 28),
                       child: themeProvider.darkTheme
                           ? Image.asset(
                               "assets/bulb_off.png",
@@ -359,10 +353,7 @@ Widget _logo(DarkThemeProvider themeChangeProvider, context) {
     height: size.height / 6,
     width: size.width / 2,
     child: GestureDetector(
-        onTap: () {},
-        child: themeChangeProvider.darkTheme
-            ? Image.asset("assets/logo_dark.png")
-            : Image.asset("assets/logo-light.png")),
+        onTap: () {}, child: themeChangeProvider.darkTheme ? Image.asset("assets/logo_dark.png") : Image.asset("assets/logo-light.png")),
   );
 }
 
@@ -400,10 +391,7 @@ Widget _description(
                 ),
                 Text(
                   "DevFest",
-                  style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w500,
-                      color: Color(0xff3972CF)),
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500, color: Color(0xff3972CF)),
                 ),
               ],
             ),
@@ -424,10 +412,8 @@ Widget _description(
               ),
               child: GestureDetector(
                 onTap: () async {
-                  if (await canLaunch(
-                      "https://commudle.com/gdg-new-delhi/events/devfest-19")) {
-                    await launch(
-                        "https://commudle.com/gdg-new-delhi/events/devfest-19");
+                  if (await canLaunch("https://commudle.com/gdg-new-delhi/events/devfest-19")) {
+                    await launch("https://commudle.com/gdg-new-delhi/events/devfest-19");
                   }
                 },
                 child: Stack(
@@ -445,10 +431,7 @@ Widget _description(
                           alignment: Alignment.center,
                           child: Text(
                             "Register Now",
-                            style: TextStyle(
-                                fontSize: 12,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.white),
+                            style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: Colors.white),
                           )),
                     )
                   ],
@@ -467,13 +450,11 @@ Widget _description(
                   child: Container(
                       height: size.width / 12,
                       width: size.width / 12,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(40),
-                          color: Theme.of(context).buttonColor),
+                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(40), color: Theme.of(context).buttonColor),
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Image.asset(
-                          "assets/twitter loght theme.png",
+                          "assets/twitter_light_theme.png",
                         ),
                       )),
                 ),
@@ -486,9 +467,7 @@ Widget _description(
                   child: Container(
                       height: size.width / 12,
                       width: size.width / 12,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(40),
-                          color: Theme.of(context).buttonColor),
+                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(40), color: Theme.of(context).buttonColor),
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Image.asset("assets/github.png"),
@@ -496,40 +475,33 @@ Widget _description(
                 ),
                 GestureDetector(
                   onTap: () async {
-                    if (await canLaunch(
-                        "https://www.linkedin.com/company/gdgcloudnd/")) {
-                      await launch(
-                          "https://www.linkedin.com/company/gdgcloudnd/");
+                    if (await canLaunch("https://www.linkedin.com/company/gdgcloudnd/")) {
+                      await launch("https://www.linkedin.com/company/gdgcloudnd/");
                     }
                   },
                   child: Container(
                       height: size.width / 12,
                       width: size.width / 12,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(40),
-                          color: Theme.of(context).buttonColor),
+                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(40), color: Theme.of(context).buttonColor),
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: Image.asset("assets/linkdin light theme.png"),
+                        child: Image.asset("assets/linkedin_light_theme.png"),
                       )),
                 ),
                 GestureDetector(
                   onTap: () async {
-                    if (await canLaunch(
-                        "https://www.facebook.com/gdgnewdelhi/")) {
+                    if (await canLaunch("https://www.facebook.com/gdgnewdelhi/")) {
                       await launch("https://www.facebook.com/gdgnewdelhi/");
                     }
                   },
                   child: Container(
                       height: size.width / 12,
                       width: size.width / 12,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(40),
-                          color: Theme.of(context).buttonColor),
+                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(40), color: Theme.of(context).buttonColor),
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Image.asset(
-                          "assets/facebook light theme.png",
+                          "assets/facebook_light_theme.png",
                         ),
                       )),
                 ),

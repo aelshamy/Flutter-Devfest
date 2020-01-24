@@ -2,14 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_devfest_gdg_newdelhi/constant/constant.dart';
 import 'package:flutter_devfest_gdg_newdelhi/notifiers/dark_theme_provider.dart';
-
-import 'package:flutter_devfest_gdg_newdelhi/utils/styles.dart';
 import 'package:flutter_devfest_gdg_newdelhi/ui/screens/agenda_screen.dart';
 import 'package:flutter_devfest_gdg_newdelhi/ui/screens/home_screen.dart';
 import 'package:flutter_devfest_gdg_newdelhi/ui/screens/speaker_list.dart';
 import 'package:flutter_devfest_gdg_newdelhi/ui/screens/speakers.dart';
 import 'package:flutter_devfest_gdg_newdelhi/ui/screens/splashscreen.dart';
 import 'package:flutter_devfest_gdg_newdelhi/ui/screens/sponsors.dart';
+import 'package:flutter_devfest_gdg_newdelhi/utils/styles.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -34,8 +33,7 @@ class _MyAppState extends State<MyApp> {
   }
 
   void getCurrentAppTheme() async {
-    themeChangeProvider.darkTheme =
-        await themeChangeProvider.devFestPreferences.getTheme();
+    themeChangeProvider.darkTheme = await themeChangeProvider.devFestPreferences.getTheme();
   }
 
   @override
@@ -43,7 +41,7 @@ class _MyAppState extends State<MyApp> {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          builder: (_) {
+          create: (_) {
             return themeChangeProvider;
           },
         )

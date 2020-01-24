@@ -47,18 +47,13 @@ class _SponsorsState extends State<Sponsors> {
                 width: size.width / 2,
                 child: Padding(
                   padding: const EdgeInsets.all(12.0),
-                  child: themeChange.darkTheme
-                      ? Image.asset("assets/arrowdarktheme.png")
-                      : Image.asset("assets/Arrow light theme.png"),
+                  child: themeChange.darkTheme ? Image.asset("assets/arrowdarktheme.png") : Image.asset("assets/arrow_light_theme.png"),
                 )),
           ),
         ),
       ),
       body: isLoadingDisabled
-          ? FlareActor("assets/loader2.flr",
-              alignment: Alignment.center,
-              fit: BoxFit.contain,
-              animation: "Untitled")
+          ? FlareActor("assets/loader2.flr", alignment: Alignment.center, fit: BoxFit.contain, animation: "Untitled")
           : Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -66,24 +61,19 @@ class _SponsorsState extends State<Sponsors> {
                   padding: const EdgeInsets.only(left: 65, bottom: 20),
                   child: Text(
                     'Sponsors',
-                    style: TextStyle(
-                        color: Theme.of(context).textSelectionColor,
-                        fontSize: 22,
-                        fontWeight: FontWeight.w600),
+                    style: TextStyle(color: Theme.of(context).textSelectionColor, fontSize: 22, fontWeight: FontWeight.w600),
                   ),
                 ),
                 GestureDetector(
                   onTap: () async {
-                    if (await canLaunch(
-                        "https://commudle.com/gcdc-new-delhi")) {
+                    if (await canLaunch("https://commudle.com/gcdc-new-delhi")) {
                       await launch("https://commudle.com/gcdc-new-delhi");
                     }
                   },
                   child: Padding(
                     padding: const EdgeInsets.all(4.0),
                     child: Card(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20)),
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
                       child: Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
@@ -100,10 +90,7 @@ class _SponsorsState extends State<Sponsors> {
                             ),
                             Text(
                               "GDG Cloud New Delhi",
-                              style: TextStyle(
-                                  fontSize: 21,
-                                  fontWeight: FontWeight.w400,
-                                  color: Colors.grey[700]),
+                              style: TextStyle(fontSize: 21, fontWeight: FontWeight.w400, color: Colors.grey[700]),
                             )
                           ],
                         ),
@@ -120,8 +107,7 @@ class _SponsorsState extends State<Sponsors> {
                   child: Padding(
                     padding: const EdgeInsets.all(4.0),
                     child: Card(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20)),
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
                       child: Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
@@ -138,10 +124,7 @@ class _SponsorsState extends State<Sponsors> {
                             ),
                             Text(
                               "GDG New Delhi",
-                              style: TextStyle(
-                                  fontSize: 21,
-                                  fontWeight: FontWeight.w400,
-                                  color: Colors.grey[700]),
+                              style: TextStyle(fontSize: 21, fontWeight: FontWeight.w400, color: Colors.grey[700]),
                             )
                           ],
                         ),
@@ -158,8 +141,7 @@ class _SponsorsState extends State<Sponsors> {
                   child: Padding(
                     padding: const EdgeInsets.all(4.0),
                     child: Card(
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20)),
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
                       child: Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),

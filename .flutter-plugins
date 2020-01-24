@@ -1,8 +1,13 @@
 # This is a generated file; do not edit or check into version control.
-connectivity=/Users/a/Documents/FlutterSDK/flutter/.pub-cache/hosted/pub.dartlang.org/connectivity-0.4.5+2/
-path_provider=/Users/a/Documents/FlutterSDK/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider-1.4.0/
-share=/Users/a/Documents/FlutterSDK/flutter/.pub-cache/hosted/pub.dartlang.org/share-0.6.3+1/
-shared_preferences=/Users/a/Documents/FlutterSDK/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences-0.5.4+3/
-sqflite=/Users/a/Documents/FlutterSDK/flutter/.pub-cache/hosted/pub.dartlang.org/sqflite-1.1.7+2/
-url_launcher=/Users/a/Documents/FlutterSDK/flutter/.pub-cache/hosted/pub.dartlang.org/url_launcher-5.2.5/
-video_player=/Users/a/Documents/FlutterSDK/flutter/.pub-cache/hosted/pub.dartlang.org/video_player-0.10.2+5/
+connectivity=/Users/elshaa1/Desktop/Projects/flutter/fluttersdk/.pub-cache/hosted/pub.dartlang.org/connectivity-0.4.6+2/
+path_provider=/Users/elshaa1/Desktop/Projects/flutter/fluttersdk/.pub-cache/hosted/pub.dartlang.org/path_provider-1.5.1/
+share=/Users/elshaa1/Desktop/Projects/flutter/fluttersdk/.pub-cache/hosted/pub.dartlang.org/share-0.6.3+5/
+shared_preferences=/Users/elshaa1/Desktop/Projects/flutter/fluttersdk/.pub-cache/hosted/pub.dartlang.org/shared_preferences-0.5.6+1/
+shared_preferences_macos=/Users/elshaa1/Desktop/Projects/flutter/fluttersdk/.pub-cache/hosted/pub.dartlang.org/shared_preferences_macos-0.0.1+4/
+shared_preferences_web=/Users/elshaa1/Desktop/Projects/flutter/fluttersdk/.pub-cache/hosted/pub.dartlang.org/shared_preferences_web-0.1.2+3/
+sqflite=/Users/elshaa1/Desktop/Projects/flutter/fluttersdk/.pub-cache/hosted/pub.dartlang.org/sqflite-1.2.0/
+url_launcher=/Users/elshaa1/Desktop/Projects/flutter/fluttersdk/.pub-cache/hosted/pub.dartlang.org/url_launcher-5.4.1/
+url_launcher_macos=/Users/elshaa1/Desktop/Projects/flutter/fluttersdk/.pub-cache/hosted/pub.dartlang.org/url_launcher_macos-0.0.1+2/
+url_launcher_web=/Users/elshaa1/Desktop/Projects/flutter/fluttersdk/.pub-cache/hosted/pub.dartlang.org/url_launcher_web-0.1.0+2/
+video_player=/Users/elshaa1/Desktop/Projects/flutter/fluttersdk/.pub-cache/hosted/pub.dartlang.org/video_player-0.10.5+2/
+video_player_web=/Users/elshaa1/Desktop/Projects/flutter/fluttersdk/.pub-cache/hosted/pub.dartlang.org/video_player_web-0.1.1+1/

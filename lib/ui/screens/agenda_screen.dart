@@ -3,13 +3,12 @@ import 'dart:io' show Platform;
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_devfest_gdg_newdelhi/bloc/track_list_bloc.dart';
-import 'package:flutter_devfest_gdg_newdelhi/ui/shared/custom_button.dart';
 import 'package:flutter_devfest_gdg_newdelhi/model/response%20model/track_list_response.dart';
 import 'package:flutter_devfest_gdg_newdelhi/network/api_response.dart';
 import 'package:flutter_devfest_gdg_newdelhi/notifiers/dark_theme_provider.dart';
-
-import 'package:flutter_devfest_gdg_newdelhi/utils/styles.dart';
 import 'package:flutter_devfest_gdg_newdelhi/ui/screens/agenda_item.dart';
+import 'package:flutter_devfest_gdg_newdelhi/ui/shared/custom_button.dart';
+import 'package:flutter_devfest_gdg_newdelhi/utils/styles.dart';
 import 'package:provider/provider.dart';
 import 'package:share/share.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -46,10 +45,7 @@ class _AgendaScreenState extends State<AgendaScreen> {
             if (snapshot.hasData) {
               switch (snapshot.data.status) {
                 case Status.LOADING:
-                  return FlareActor("assets/loader2.flr",
-                      alignment: Alignment.center,
-                      fit: BoxFit.contain,
-                      animation: "Untitled");
+                  return FlareActor("assets/loader2.flr", alignment: Alignment.center, fit: BoxFit.contain, animation: "Untitled");
                   break;
                 case Status.COMPLETED:
                   return _agenda(snapshot.data.apiResponseData, context);
@@ -103,10 +99,8 @@ class _AgendaScreenState extends State<AgendaScreen> {
         backgroundColor: Theme.of(context).primaryColor,
         floatingActionButton: InkWell(
           onTap: () async {
-            if (await canLaunch(
-                "https://commudle.com/gdg-new-delhi/events/devfest-19")) {
-              await launch(
-                  "https://commudle.com/gdg-new-delhi/events/devfest-19");
+            if (await canLaunch("https://commudle.com/gdg-new-delhi/events/devfest-19")) {
+              await launch("https://commudle.com/gdg-new-delhi/events/devfest-19");
             }
           },
           child: Container(
@@ -128,10 +122,7 @@ class _AgendaScreenState extends State<AgendaScreen> {
                   alignment: Alignment.center,
                   child: Text(
                     "Register Now",
-                    style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.white),
+                    style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: Colors.white),
                   ),
                 ),
               ],
@@ -160,7 +151,7 @@ class _AgendaScreenState extends State<AgendaScreen> {
                           padding: const EdgeInsets.all(12.0),
                           child: themeChange.darkTheme
                               ? Image.asset("assets/arrowdarktheme.png")
-                              : Image.asset("assets/Arrow light theme.png"),
+                              : Image.asset("assets/arrow_light_theme.png"),
                         )),
                   ),
                 ),
@@ -168,13 +159,10 @@ class _AgendaScreenState extends State<AgendaScreen> {
                   GestureDetector(
                     onTap: () async {
                       if (Platform.isAndroid) {
-                        Share.share(
-                            'Download DevFest 19 app at https://play.google.com/store/apps/details?id=com.flutterdevs.devfest');
+                        Share.share('Download DevFest 19 app at https://play.google.com/store/apps/details?id=com.flutterdevs.devfest');
                       } else if (Platform.isIOS) {
-                        if (await canLaunch(
-                            "https://apps.apple.com/us/app/bull-horns-panic-button/id879073850?ls=1")) {
-                          await launch(
-                              "https://apps.apple.com/us/app/bull-horns-panic-button/id879073850?ls=1");
+                        if (await canLaunch("https://apps.apple.com/us/app/bull-horns-panic-button/id879073850?ls=1")) {
+                          await launch("https://apps.apple.com/us/app/bull-horns-panic-button/id879073850?ls=1");
                         }
                       }
                     },
@@ -191,7 +179,7 @@ class _AgendaScreenState extends State<AgendaScreen> {
                             padding: const EdgeInsets.all(12.0),
                             child: themeChange.darkTheme
                                 ? Image.asset("assets/share-dark-theme.png")
-                                : Image.asset("assets/share light theme.png"),
+                                : Image.asset("assets/share_light_theme.png"),
                           )),
                     ),
                   ),
@@ -206,9 +194,7 @@ class _AgendaScreenState extends State<AgendaScreen> {
                     ),
                     child: Text(
                       'Agenda',
-                      style: TextStyle(
-                          color: Theme.of(context).textSelectionColor,
-                          fontSize: 18),
+                      style: TextStyle(color: Theme.of(context).textSelectionColor, fontSize: 18),
                     ),
                   ),
                 ),
@@ -219,31 +205,21 @@ class _AgendaScreenState extends State<AgendaScreen> {
                         labelColor: Theme.of(context).textSelectionColor,
                         isScrollable: true,
                         indicatorColor: Colors.blue,
-                        labelStyle: TextStyle(
-                            color: Theme.of(context).textSelectionColor,
-                            fontSize: 15,
-                            fontWeight: FontWeight.w400),
-                        unselectedLabelStyle: TextStyle(
-                            fontSize: 15, fontWeight: FontWeight.w400),
-                        unselectedLabelColor:
-                            Theme.of(context).textSelectionColor,
+                        labelStyle: TextStyle(color: Theme.of(context).textSelectionColor, fontSize: 15, fontWeight: FontWeight.w400),
+                        unselectedLabelStyle: TextStyle(fontSize: 15, fontWeight: FontWeight.w400),
+                        unselectedLabelColor: Theme.of(context).textSelectionColor,
                         indicatorSize: TabBarIndicatorSize.tab,
-                        tabs: List<Tab>.generate(
-                            response.data.eventLocationTracks.length,
-                            (int index) {
+                        tabs: List<Tab>.generate(response.data.eventLocationTracks.length, (int index) {
                           return Tab(
-                            text: response.data.eventLocationTracks[index].data
-                                .attributes.name,
+                            text: response.data.eventLocationTracks[index].data.attributes.name,
                           );
                         }))),
               ),
             ];
           },
           body: TabBarView(
-            children: List<Widget>.generate(
-                response.data.eventLocationTracks.length, (int index) {
-              return AgendaItem(response
-                  .data.eventLocationTracks[index].data.links.trackSlots);
+            children: List<Widget>.generate(response.data.eventLocationTracks.length, (int index) {
+              return AgendaItem(response.data.eventLocationTracks[index].data.links.trackSlots);
             }),
           ),
         ),

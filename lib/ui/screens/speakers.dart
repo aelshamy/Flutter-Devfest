@@ -41,9 +41,7 @@ class _SpeakerDetailsScreenState extends State<SpeakerDetailsScreen> {
                 width: size.width / 2,
                 child: Padding(
                   padding: const EdgeInsets.all(12.0),
-                  child: themeChange.darkTheme
-                      ? Image.asset("assets/arrowdarktheme.png")
-                      : Image.asset("assets/Arrow light theme.png"),
+                  child: themeChange.darkTheme ? Image.asset("assets/arrowdarktheme.png") : Image.asset("assets/arrow_light_theme.png"),
                 )),
           ),
         ),
@@ -55,14 +53,12 @@ class _SpeakerDetailsScreenState extends State<SpeakerDetailsScreen> {
             Stack(
               children: <Widget>[
                 Container(
-                  margin: EdgeInsets.only(
-                      left: 20, right: 20, top: size.height / 9),
+                  margin: EdgeInsets.only(left: 20, right: 20, top: size.height / 9),
                   height: MediaQuery.of(context).size.height / 1.74,
                   width: MediaQuery.of(context).size.width,
                   child: Card(
                     elevation: 1,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(15)),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
@@ -73,26 +69,20 @@ class _SpeakerDetailsScreenState extends State<SpeakerDetailsScreen> {
                               Column(
                                 children: <Widget>[
                                   Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                    crossAxisAlignment: CrossAxisAlignment.start,
                                     children: <Widget>[
                                       Padding(
                                         padding: const EdgeInsets.only(top: 20),
                                         child: Row(
                                           children: <Widget>[
                                             Padding(
-                                              padding: const EdgeInsets.only(
-                                                  left: 12),
+                                              padding: const EdgeInsets.only(left: 12),
                                               child: Container(
                                                 width: size.width / 1.9,
                                                 child: Text(
                                                   widget.speakerData.name,
-                                                  overflow:
-                                                      TextOverflow.ellipsis,
-                                                  style: TextStyle(
-                                                      fontSize: 22,
-                                                      fontWeight:
-                                                          FontWeight.w600),
+                                                  overflow: TextOverflow.ellipsis,
+                                                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.w600),
                                                 ),
                                               ),
                                             ),
@@ -103,16 +93,13 @@ class _SpeakerDetailsScreenState extends State<SpeakerDetailsScreen> {
                                         ),
                                       ),
                                       Padding(
-                                        padding:
-                                            const EdgeInsets.only(left: 12),
+                                        padding: const EdgeInsets.only(left: 12),
                                         child: Container(
                                           width: size.width / 1.9,
                                           child: Text(
                                             widget.speakerData.designation,
                                             overflow: TextOverflow.ellipsis,
-                                            style: TextStyle(
-                                                fontSize: 12,
-                                                fontWeight: FontWeight.w700),
+                                            style: TextStyle(fontSize: 12, fontWeight: FontWeight.w700),
                                           ),
                                         ),
                                       ),
@@ -128,8 +115,7 @@ class _SpeakerDetailsScreenState extends State<SpeakerDetailsScreen> {
                                 ],
                               ),
                               Padding(
-                                padding:
-                                    const EdgeInsets.only(left: 12, right: 12),
+                                padding: const EdgeInsets.only(left: 12, right: 12),
                                 child: Text(
                                   widget.speakerData.aboutMe,
                                   maxLines: 10,
@@ -147,26 +133,19 @@ class _SpeakerDetailsScreenState extends State<SpeakerDetailsScreen> {
                                 widget.speakerData.twitter != null
                                     ? GestureDetector(
                                         onTap: () async {
-                                          if (await canLaunch(twitterUrl +
-                                              widget.speakerData.twitter)) {
-                                            await launch(twitterUrl +
-                                                widget.speakerData.twitter
-                                                    .replaceAll('@', ''));
+                                          if (await canLaunch(twitterUrl + widget.speakerData.twitter)) {
+                                            await launch(twitterUrl + widget.speakerData.twitter.replaceAll('@', ''));
                                           }
                                         },
                                         child: Container(
                                             height: size.width / 12,
                                             width: size.width / 12,
                                             decoration: BoxDecoration(
-                                                borderRadius:
-                                                    BorderRadius.circular(40),
-                                                color: Theme.of(context)
-                                                    .buttonColor),
+                                                borderRadius: BorderRadius.circular(40), color: Theme.of(context).buttonColor),
                                             child: Padding(
-                                              padding:
-                                                  const EdgeInsets.all(8.0),
+                                              padding: const EdgeInsets.all(8.0),
                                               child: Image.asset(
-                                                "assets/twitter loght theme.png",
+                                                "assets/twitter_light_theme.png",
                                               ),
                                             )),
                                       )
@@ -177,25 +156,18 @@ class _SpeakerDetailsScreenState extends State<SpeakerDetailsScreen> {
                                 widget.speakerData.github != null
                                     ? GestureDetector(
                                         onTap: () async {
-                                          if (await canLaunch(
-                                              widget.speakerData.github)) {
-                                            await launch(
-                                                widget.speakerData.github);
+                                          if (await canLaunch(widget.speakerData.github)) {
+                                            await launch(widget.speakerData.github);
                                           }
                                         },
                                         child: Container(
                                             height: size.width / 12,
                                             width: size.width / 12,
                                             decoration: BoxDecoration(
-                                                borderRadius:
-                                                    BorderRadius.circular(40),
-                                                color: Theme.of(context)
-                                                    .buttonColor),
+                                                borderRadius: BorderRadius.circular(40), color: Theme.of(context).buttonColor),
                                             child: Padding(
-                                              padding:
-                                                  const EdgeInsets.all(8.0),
-                                              child: Image.asset(
-                                                  "assets/github.png"),
+                                              padding: const EdgeInsets.all(8.0),
+                                              child: Image.asset("assets/github.png"),
                                             )),
                                       )
                                     : Container(),
@@ -205,25 +177,18 @@ class _SpeakerDetailsScreenState extends State<SpeakerDetailsScreen> {
                                 widget.speakerData.linkedin != null
                                     ? GestureDetector(
                                         onTap: () async {
-                                          if (await canLaunch(
-                                              widget.speakerData.linkedin)) {
-                                            await launch(
-                                                widget.speakerData.linkedin);
+                                          if (await canLaunch(widget.speakerData.linkedin)) {
+                                            await launch(widget.speakerData.linkedin);
                                           }
                                         },
                                         child: Container(
                                             height: size.width / 12,
                                             width: size.width / 12,
                                             decoration: BoxDecoration(
-                                                borderRadius:
-                                                    BorderRadius.circular(40),
-                                                color: Theme.of(context)
-                                                    .buttonColor),
+                                                borderRadius: BorderRadius.circular(40), color: Theme.of(context).buttonColor),
                                             child: Padding(
-                                              padding:
-                                                  const EdgeInsets.all(8.0),
-                                              child: Image.asset(
-                                                  "assets/linkdin light theme.png"),
+                                              padding: const EdgeInsets.all(8.0),
+                                              child: Image.asset("assets/linkedin_light_theme.png"),
                                             )),
                                       )
                                     : Container(),
@@ -241,10 +206,7 @@ class _SpeakerDetailsScreenState extends State<SpeakerDetailsScreen> {
                   left: size.width / 5,
                   child: Text(
                     "Speaker",
-                    style: TextStyle(
-                        color: Theme.of(context).textSelectionColor,
-                        fontSize: 28,
-                        fontWeight: FontWeight.w600),
+                    style: TextStyle(color: Theme.of(context).textSelectionColor, fontSize: 28, fontWeight: FontWeight.w600),
                   ),
                 ),
                 Align(

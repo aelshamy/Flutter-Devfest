@@ -37,19 +37,15 @@ dependencies:
   cached_network_image:
   flutter_advanced_networkimage:
 
-
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
@@ -57,48 +53,12 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/gdg_banner.jpg
-    - assets/gdg_logo.png
-    - assets/model.jpg
-    - assets/facebook light theme.png
-    - assets/linkdin light theme.png
-    - assets/twitter loght theme.png
-    - assets/youtube light theme.png
-    - assets/github.png
-    - assets/logo-light.png
-    - assets/logo_dark.png
-    - assets/agenda.png
-    - assets/speaker.png
-    - assets/sponsors.png
-    - assets/team.png
-    - assets/bulb_on.png
-    - assets/bulb_off.png
-    - assets/button.png
-    - assets/arrow-blue.png
-    - assets/nouserprofile.png
-    - assets/Arrow light theme.png
-    - assets/arrowdarktheme.png
-    - assets/GDG-Cloud-New-Delhi.png
-    - assets/GDG-New-Delhi.png
-    - assets/WTM-Delhi.png
-    - assets/gdg.png
-    - assets/noprofileuser.png
-    - assets/share light theme.png
-    - assets/share-dark-theme.png
-    - assets/loader.flr
-    - assets/loader2.flr
-    - assets/video/splashvideo1.mp4
-    - assets/video/splash.mp4
-
-
-
-
-  # An image asset can refer to one or more resolution-specific "variants", see
+    - assets/
+    - assets/video/
+    # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
-
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages
-
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
   # "family" key with the font family name, and a "fonts" key with a

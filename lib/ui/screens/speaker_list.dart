@@ -10,8 +10,8 @@ import 'package:flutter_devfest_gdg_newdelhi/ui/screens/speakers.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../shared/custom_button.dart';
 import '../../utils/styles.dart';
+import '../shared/custom_button.dart';
 
 class SpeakersScreenList extends StatefulWidget {
   @override
@@ -23,12 +23,7 @@ class _SpeakersScreenListState extends State<SpeakersScreenList> {
 
   var twitterUrl = "https://twitter.com/";
 
-  List<Color> colors = [
-    Colors.red,
-    Colors.green,
-    Colors.yellow,
-    Colors.blueAccent
-  ];
+  List<Color> colors = [Colors.red, Colors.green, Colors.yellow, Colors.blueAccent];
 
   SpeakerBloc speakerBloc = SpeakerBloc();
 
@@ -51,14 +46,10 @@ class _SpeakersScreenListState extends State<SpeakersScreenList> {
       padding: const EdgeInsets.all(4.0),
       child: GestureDetector(
         onTap: () {
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => SpeakerDetailsScreen(speakerData)));
+          Navigator.push(context, MaterialPageRoute(builder: (context) => SpeakerDetailsScreen(speakerData)));
         },
         child: Card(
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
           child: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(16),
@@ -72,9 +63,7 @@ class _SpeakersScreenListState extends State<SpeakersScreenList> {
                     height: size.height,
                     width: size.width / 4,
                     child: ClipRRect(
-                        borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(12),
-                            topLeft: Radius.circular(12)),
+                        borderRadius: BorderRadius.only(bottomLeft: Radius.circular(12), topLeft: Radius.circular(12)),
                         child: Hero(
                           tag: speakerData.name,
                           child: speakerData.avatar != null
@@ -100,8 +89,7 @@ class _SpeakersScreenListState extends State<SpeakersScreenList> {
                               Text(
                                 speakerData.name ?? "",
                                 overflow: TextOverflow.ellipsis,
-                                style: TextStyle(
-                                    fontSize: 14, fontWeight: FontWeight.w600),
+                                style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
                               ),
                               SizedBox(
                                 width: size.width / 120,
@@ -119,14 +107,12 @@ class _SpeakersScreenListState extends State<SpeakersScreenList> {
                           Text(
                             speakerData.designation ?? "",
                             overflow: TextOverflow.ellipsis,
-                            style: TextStyle(
-                                fontSize: 14, fontWeight: FontWeight.w600),
+                            style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
                           ),
                           Text(
                             "",
                             maxLines: 3,
-                            style: TextStyle(
-                                fontSize: 12, fontWeight: FontWeight.w400),
+                            style: TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -137,26 +123,19 @@ class _SpeakersScreenListState extends State<SpeakersScreenList> {
                                   speakerData.twitter != null
                                       ? GestureDetector(
                                           onTap: () async {
-                                            if (await canLaunch(twitterUrl +
-                                                speakerData.twitter)) {
-                                              await launch(twitterUrl +
-                                                  speakerData.twitter
-                                                      .replaceAll('@', ''));
+                                            if (await canLaunch(twitterUrl + speakerData.twitter)) {
+                                              await launch(twitterUrl + speakerData.twitter.replaceAll('@', ''));
                                             }
                                           },
                                           child: Container(
                                               height: size.width / 12,
                                               width: size.width / 12,
                                               decoration: BoxDecoration(
-                                                  borderRadius:
-                                                      BorderRadius.circular(40),
-                                                  color: Theme.of(context)
-                                                      .buttonColor),
+                                                  borderRadius: BorderRadius.circular(40), color: Theme.of(context).buttonColor),
                                               child: Padding(
-                                                padding:
-                                                    const EdgeInsets.all(8.0),
+                                                padding: const EdgeInsets.all(8.0),
                                                 child: Image.asset(
-                                                  "assets/twitter loght theme.png",
+                                                  "assets/twitter_light_theme.png",
                                                 ),
                                               )),
                                         )
@@ -167,8 +146,7 @@ class _SpeakersScreenListState extends State<SpeakersScreenList> {
                                   speakerData.github != null
                                       ? GestureDetector(
                                           onTap: () async {
-                                            if (await canLaunch(
-                                                speakerData.github)) {
+                                            if (await canLaunch(speakerData.github)) {
                                               await launch(speakerData.github);
                                             }
                                           },
@@ -176,15 +154,10 @@ class _SpeakersScreenListState extends State<SpeakersScreenList> {
                                               height: size.width / 12,
                                               width: size.width / 12,
                                               decoration: BoxDecoration(
-                                                  borderRadius:
-                                                      BorderRadius.circular(40),
-                                                  color: Theme.of(context)
-                                                      .buttonColor),
+                                                  borderRadius: BorderRadius.circular(40), color: Theme.of(context).buttonColor),
                                               child: Padding(
-                                                padding:
-                                                    const EdgeInsets.all(8.0),
-                                                child: Image.asset(
-                                                    "assets/github.png"),
+                                                padding: const EdgeInsets.all(8.0),
+                                                child: Image.asset("assets/github.png"),
                                               )),
                                         )
                                       : Container(),
@@ -194,25 +167,18 @@ class _SpeakersScreenListState extends State<SpeakersScreenList> {
                                   speakerData.linkedin != null
                                       ? GestureDetector(
                                           onTap: () async {
-                                            if (await canLaunch(
-                                                speakerData.linkedin)) {
-                                              await launch(
-                                                  speakerData.linkedin);
+                                            if (await canLaunch(speakerData.linkedin)) {
+                                              await launch(speakerData.linkedin);
                                             }
                                           },
                                           child: Container(
                                               height: size.width / 12,
                                               width: size.width / 12,
                                               decoration: BoxDecoration(
-                                                  borderRadius:
-                                                      BorderRadius.circular(40),
-                                                  color: Theme.of(context)
-                                                      .buttonColor),
+                                                  borderRadius: BorderRadius.circular(40), color: Theme.of(context).buttonColor),
                                               child: Padding(
-                                                padding:
-                                                    const EdgeInsets.all(8.0),
-                                                child: Image.asset(
-                                                    "assets/linkdin light theme.png"),
+                                                padding: const EdgeInsets.all(8.0),
+                                                child: Image.asset("assets/linkedin_light_theme.png"),
                                               )),
                                         )
                                       : Container(),
@@ -227,9 +193,7 @@ class _SpeakersScreenListState extends State<SpeakersScreenList> {
                               Container(
                                   height: size.width / 12,
                                   width: size.width / 12,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(40),
-                                      color: Theme.of(context).buttonColor),
+                                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(40), color: Theme.of(context).buttonColor),
                                   child: Padding(
                                     padding: const EdgeInsets.all(8.0),
                                     child: Image.asset(
@@ -256,10 +220,8 @@ class _SpeakersScreenListState extends State<SpeakersScreenList> {
     return Scaffold(
       floatingActionButton: InkWell(
         onTap: () async {
-          if (await canLaunch(
-              "https://commudle.com/gdg-new-delhi/events/devfest-19")) {
-            await launch(
-                "https://commudle.com/gdg-new-delhi/events/devfest-19");
+          if (await canLaunch("https://commudle.com/gdg-new-delhi/events/devfest-19")) {
+            await launch("https://commudle.com/gdg-new-delhi/events/devfest-19");
           }
         },
         child: Container(
@@ -281,10 +243,7 @@ class _SpeakersScreenListState extends State<SpeakersScreenList> {
                 alignment: Alignment.center,
                 child: Text(
                   "Register Now",
-                  style: TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.white),
+                  style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: Colors.white),
                 ),
               ),
             ],
@@ -312,9 +271,8 @@ class _SpeakersScreenListState extends State<SpeakersScreenList> {
                       width: size.width / 2,
                       child: Padding(
                         padding: const EdgeInsets.all(12.0),
-                        child: themechange.darkTheme
-                            ? Image.asset("assets/arrowdarktheme.png")
-                            : Image.asset("assets/Arrow light theme.png"),
+                        child:
+                            themechange.darkTheme ? Image.asset("assets/arrowdarktheme.png") : Image.asset("assets/arrow_light_theme.png"),
                       )),
                 ),
               ),
@@ -325,9 +283,7 @@ class _SpeakersScreenListState extends State<SpeakersScreenList> {
               flexibleSpace: FlexibleSpaceBar(
                 title: Text(
                   'Speakers',
-                  style: TextStyle(
-                      color: Theme.of(context).textSelectionColor,
-                      fontSize: 18),
+                  style: TextStyle(color: Theme.of(context).textSelectionColor, fontSize: 18),
                 ),
                 collapseMode: CollapseMode.pin,
               ),
@@ -346,21 +302,15 @@ class _SpeakersScreenListState extends State<SpeakersScreenList> {
   Widget speakerList() {
     return StreamBuilder<ApiResponse<SpeakerListResponse>>(
         stream: speakerBloc.quotationStream,
-        builder: (context,
-            AsyncSnapshot<ApiResponse<SpeakerListResponse>> snapshot) {
+        builder: (context, AsyncSnapshot<ApiResponse<SpeakerListResponse>> snapshot) {
           if (snapshot.hasData) {
             if (snapshot.data.apiResponseData.status == 200) {
               return ListView.builder(
                   physics: NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
-                  itemCount: snapshot
-                      .data.apiResponseData.speakersData.speakers.length,
+                  itemCount: snapshot.data.apiResponseData.speakersData.speakers.length,
                   itemBuilder: (context, index) {
-                    return buildItem(
-                        context,
-                        index,
-                        snapshot
-                            .data.apiResponseData.speakersData.speakers[index]);
+                    return buildItem(context, index, snapshot.data.apiResponseData.speakersData.speakers[index]);
                   });
             } else {
               return Container(
@@ -410,10 +360,7 @@ class _SpeakersScreenListState extends State<SpeakersScreenList> {
             );
           }
           return Center(
-            child: FlareActor("assets/loader2.flr",
-                alignment: Alignment.center,
-                fit: BoxFit.contain,
-                animation: "Untitled"),
+            child: FlareActor("assets/loader2.flr", alignment: Alignment.center, fit: BoxFit.contain, animation: "Untitled"),
           );
         });
   }
