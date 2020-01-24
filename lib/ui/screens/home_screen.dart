@@ -49,108 +49,6 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
             ),
           )
         : homeBody(themeProvider);
-
-//      StreamBuilder<bool>(
-//
-//        stream: upcomingEventBloc.connectionStream,
-//        builder: (context, connectivitySnapshot) {
-//          print(connectivitySnapshot.data);
-//
-//          if (connectivitySnapshot.hasData) {
-//            if (connectivitySnapshot.data) {
-//              return StreamBuilder<UpComingEventsResponse>(
-//                stream: upcomingEventBloc.upComingEventsStream,
-//                builder:
-//                    (context, AsyncSnapshot<UpComingEventsResponse> snapshot) {
-//                  if (snapshot.hasData) {
-//                    if (snapshot.data.status == 200) {
-//                      print(snapshot.data);
-//                      return cirAn
-//                          ? CircularRevealAnimation(
-//                        center:
-//                        Offset(size.height / 15, size.width / 3.5),
-//                        animation: animation,
-//                        child: homeBody(themeProvider, upcomingEvent),
-//                      )
-//                          : homeBody(themeProvider, upcomingEvent);
-//                    } else {
-//                      return Container(
-//                        child: Column(
-//                          crossAxisAlignment: CrossAxisAlignment.center,
-//                          children: <Widget>[
-//                            Text(
-//                              snapshot.data.message,
-//                              textAlign: TextAlign.center,
-//                              style: Styles.defaultTextStyle,
-//                            ),
-//                            SizedBox(
-//                              height: 10,
-//                            ),
-//                            CustomPopUPButton(
-//                              voidCallback: () {
-//                                upcomingEventBloc.loadScreenScreen();
-//                              },
-//                              title: "Retry",
-//                            ),
-//                          ],
-//                        ),
-//                      );
-//                    }
-//                  } else if (snapshot.hasError || snapshot == null) {
-//                    print("has error");
-//
-//                    return Container(
-//                        child: Column(
-//                          crossAxisAlignment: CrossAxisAlignment.center,
-//                          children: <Widget>[
-//                            Text(
-//                              "Failed to load detail\nPlease try again!",
-//                              textAlign: TextAlign.center,
-//                              style: Styles.defaultTextStyle,
-//                            ),
-//                            SizedBox(
-//                              height: 10,
-//                            ),
-//                            CustomPopUPButton(
-//                              voidCallback: () {
-//                                upcomingEventBloc.loadScreenScreen();
-//                              },
-//                              title: "Retry",
-//                            ),
-//                          ],
-//                        ));
-//                  }
-//                  return SpinKitThreeBounce(color: Styles.purpleColor);
-//                },
-//              );
-//            } else {
-//              return Container(
-//                child: Column(
-//                  crossAxisAlignment: CrossAxisAlignment.center,
-//                  children: <Widget>[
-//                    Text(
-//                      "you are not connected to internet",
-//                      textAlign: TextAlign.center,
-//                      style: Styles.defaultTextStyle,
-//                    ),
-//                    SizedBox(
-//                      height: 10,
-//                    ),
-//                    CustomPopUPButton(
-//                      voidCallback: () {
-//                        upcomingEventBloc.loadScreenScreen();
-//                      },
-//                      title: "Retry",
-//                    ),
-//                  ],
-//                ),
-//              );
-//            }
-//          } else {
-//            print("dusri wali");
-//            return SpinKitThreeBounce(color: Styles.purpleColor);
-//          }
-//        });
   }
 
   Widget homeBody(DarkThemeProvider themeProvider) {
@@ -600,29 +498,6 @@ Widget _optionsScreen(context) {
                   ),
                 ),
               ),
-//              InkWell(
-//                highlightColor: Colors.transparent,
-//                onTap: () {
-//                  Navigator.push(
-//                    context,
-//                    MaterialPageRoute(
-//                      builder: (context) => Team(),
-//                    ),
-//                  );
-//                },
-//                child: Container(
-//                  child: Column(
-//                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-//                    children: <Widget>[
-//                      Image.asset(
-//                        "assets/team.png",
-//                        height: size.height / 30,
-//                      ),
-//                      Text('Team', style: TextStyle(fontSize: 11)),
-//                    ],
-//                  ),
-//                ),
-//              ),
             ],
           )),
     ),

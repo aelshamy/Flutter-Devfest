@@ -41,12 +41,11 @@ class SplashScreenState extends State<SplashScreen> {
   }
 
   void initializeVideo() {
-    playerController =
-        VideoPlayerController.asset("assets/video/splashvideo1.mp4")
-          ..addListener(listener)
-          ..setVolume(0.0)
-          ..initialize()
-          ..play();
+    playerController = VideoPlayerController.asset("assets/video/splashvideo1.mp4")
+      ..addListener(listener)
+      ..setVolume(0.0)
+      ..initialize()
+      ..play();
   }
 
   @override
@@ -67,8 +66,10 @@ class SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
-        body: Stack(fit: StackFit.expand, children: <Widget>[
+      backgroundColor: Colors.white,
+      body: Stack(
+        fit: StackFit.expand,
+        children: <Widget>[
           new AspectRatio(
               aspectRatio: 9 / 16,
               child: Container(
@@ -78,6 +79,8 @@ class SplashScreenState extends State<SplashScreen> {
                       )
                     : Container()),
               )),
-        ]));
+        ],
+      ),
+    );
   }
 }
