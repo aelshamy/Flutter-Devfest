@@ -21,7 +21,6 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
   @override
   void initState() {
     super.initState();
-//    upcomingEventBloc.loadScreenScreen();
 
     animationController = AnimationController(
       vsync: this,
@@ -241,187 +240,29 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
       ),
     );
   }
-}
 
-Widget _logo(DarkThemeProvider themeChangeProvider, context) {
-  var size = MediaQuery.of(context).size;
+  Widget _logo(DarkThemeProvider themeChangeProvider, context) {
+    var size = MediaQuery.of(context).size;
 
-  return Container(
-    margin: EdgeInsets.only(top: 40, bottom: 0.0, left: 25.0, right: 25.0),
-    height: size.height / 6,
-    width: size.width / 2,
-    child: GestureDetector(
-        onTap: () {}, child: themeChangeProvider.darkTheme ? Image.asset("assets/logo_dark.png") : Image.asset("assets/logo-light.png")),
-  );
-}
+    return Container(
+      margin: EdgeInsets.only(top: 40, bottom: 0.0, left: 25.0, right: 25.0),
+      height: size.height / 6,
+      width: size.width / 2,
+      child: GestureDetector(
+          onTap: () {}, child: themeChangeProvider.darkTheme ? Image.asset("assets/logo_dark.png") : Image.asset("assets/logo-light.png")),
+    );
+  }
 
-Widget _description(
-  context,
-) {
-//  var upcomingEventsData = upcomingEvent.data.attributes;
-//  print(upcomingEventsData.name);
-
-  var size = MediaQuery.of(context).size;
-  return Container(
-    child: Card(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-      elevation: 0,
-      // color: Colors.white,
-      child: Container(
-        height: size.height / 1,
-        width: size.width / 1.1,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-            Text(
-              'Welcome to',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Text(
-                  'GDG New Delhi',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
-                ),
-                SizedBox(
-                  width: size.width / 12 / 15,
-                ),
-                Text(
-                  "DevFest",
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500, color: Color(0xff3972CF)),
-                ),
-              ],
-            ),
-            Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Container(
-                  child: Text(
-                "DevFest'19, our yearly fest, is a really special event for us. It describes both, 'The Community Spirit' and 'The Developer Spirit' to keep learning, sharing and developing solutions together.This year it's going to be shaped like a tech conference with experts from a number of domains including Web, Cloud, Android, Flutter, AR/VR, Security, Firebase, ML, Python, IoT, Design, UX, UI, Kotlin and the list continues.What's more? Obviously, goodies!There's going to be a number of activities in and around the event, be sure to participate!",
-                maxLines: 8,
-                overflow: TextOverflow.ellipsis,
-              )),
-            ),
-            Container(
-              height: size.height / 16,
-              width: size.width / 3.2,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(25),
-              ),
-              child: GestureDetector(
-                onTap: () async {
-                  if (await canLaunch("https://commudle.com/gdg-new-delhi/events/devfest-19")) {
-                    await launch("https://commudle.com/gdg-new-delhi/events/devfest-19");
-                  }
-                },
-                child: Stack(
-                  children: <Widget>[
-                    Center(
-                      child: Image.asset(
-                        "assets/button.png",
-                        fit: BoxFit.fitWidth,
-                      ),
-                    ),
-                    Container(
-                      height: size.height / 16,
-                      width: size.width / 3.2,
-                      child: Align(
-                          alignment: Alignment.center,
-                          child: Text(
-                            "Register Now",
-                            style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: Colors.white),
-                          )),
-                    )
-                  ],
-                ),
-              ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                GestureDetector(
-                  onTap: () async {
-                    if (await canLaunch("https://twitter.com/gdg_nd?lang=en")) {
-                      await launch("https://twitter.com/gdg_nd?lang=en");
-                    }
-                  },
-                  child: Container(
-                      height: size.width / 12,
-                      width: size.width / 12,
-                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(40), color: Theme.of(context).buttonColor),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Image.asset(
-                          "assets/twitter_light_theme.png",
-                        ),
-                      )),
-                ),
-                GestureDetector(
-                  onTap: () async {
-                    if (await canLaunch("https://github.com/gdgnewdelhi")) {
-                      await launch("https://github.com/gdgnewdelhi");
-                    }
-                  },
-                  child: Container(
-                      height: size.width / 12,
-                      width: size.width / 12,
-                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(40), color: Theme.of(context).buttonColor),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Image.asset("assets/github.png"),
-                      )),
-                ),
-                GestureDetector(
-                  onTap: () async {
-                    if (await canLaunch("https://www.linkedin.com/company/gdgcloudnd/")) {
-                      await launch("https://www.linkedin.com/company/gdgcloudnd/");
-                    }
-                  },
-                  child: Container(
-                      height: size.width / 12,
-                      width: size.width / 12,
-                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(40), color: Theme.of(context).buttonColor),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Image.asset("assets/linkedin_light_theme.png"),
-                      )),
-                ),
-                GestureDetector(
-                  onTap: () async {
-                    if (await canLaunch("https://www.facebook.com/gdgnewdelhi/")) {
-                      await launch("https://www.facebook.com/gdgnewdelhi/");
-                    }
-                  },
-                  child: Container(
-                      height: size.width / 12,
-                      width: size.width / 12,
-                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(40), color: Theme.of(context).buttonColor),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Image.asset(
-                          "assets/facebook_light_theme.png",
-                        ),
-                      )),
-                ),
-              ],
-            )
-          ],
-        ),
-      ),
-    ),
-  );
-}
-
-Widget _optionsScreen(context) {
-  var size = MediaQuery.of(context).size;
-  return Container(
-    margin: EdgeInsets.only(left: 8, right: 8, top: 20),
-    height: MediaQuery.of(context).size.height / 7,
-    width: MediaQuery.of(context).size.width,
-    child: Card(
-      elevation: 0,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-      child: Padding(
+  Widget _optionsScreen(context) {
+    var size = MediaQuery.of(context).size;
+    return Container(
+      margin: EdgeInsets.only(left: 8, right: 8, top: 20),
+      height: MediaQuery.of(context).size.height / 7,
+      width: MediaQuery.of(context).size.width,
+      child: Card(
+        elevation: 0,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+        child: Padding(
           padding: const EdgeInsets.all(12.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -499,7 +340,104 @@ Widget _optionsScreen(context) {
                 ),
               ),
             ],
-          )),
-    ),
-  );
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _description(context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10),
+      child: Card(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+        elevation: 0,
+        // color: Colors.white,
+        child: Container(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              RichText(
+                textAlign: TextAlign.center,
+                text: TextSpan(
+                  style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.w500),
+                  children: <TextSpan>[
+                    TextSpan(text: 'Welcome to \n'),
+                    TextSpan(text: 'GDG New Delhi '),
+                    TextSpan(text: 'DevFest', style: TextStyle(color: Color(0xff3972CF))),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Text(
+                  "DevFest'19, our yearly fest, is a really special event for us. It describes both, 'The Community Spirit' and 'The Developer Spirit' to keep learning, sharing and developing solutions together.This year it's going to be shaped like a tech conference with experts from a number of domains including Web, Cloud, Android, Flutter, AR/VR, Security, Firebase, ML, Python, IoT, Design, UX, UI, Kotlin and the list continues.What's more? Obviously, goodies!There's going to be a number of activities in and around the event, be sure to participate!",
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: 8,
+                ),
+              ),
+              FlatButton(
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 30, vertical: 12),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(25),
+                    image: DecorationImage(image: AssetImage('assets/button.png'), fit: BoxFit.cover),
+                  ),
+                  child: Text(
+                    "Register Now",
+                    style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: Colors.white),
+                  ),
+                ),
+                onPressed: () async {
+                  if (await canLaunch("https://commudle.com/gdg-new-delhi/events/devfest-19")) {
+                    await launch("https://commudle.com/gdg-new-delhi/events/devfest-19");
+                  }
+                },
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  _socialButton(
+                    imgUrl: "assets/twitter_light_theme.png",
+                    url: "https://twitter.com/gdg_nd?lang=en",
+                  ),
+                  _socialButton(
+                    imgUrl: "assets/github.png",
+                    url: "https://github.com/gdgnewdelhi",
+                  ),
+                  _socialButton(
+                    imgUrl: "assets/linkedin_light_theme.png",
+                    url: "https://www.linkedin.com/company/gdgcloudnd/",
+                  ),
+                  _socialButton(
+                    imgUrl: "assets/facebook_light_theme.png",
+                    url: "https://www.facebook.com/gdgnewdelhi/",
+                  ),
+                ],
+              )
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _socialButton({String imgUrl, String url}) {
+    return ConstrainedBox(
+      child: FlatButton(
+        padding: EdgeInsets.all(8),
+        color: Theme.of(context).buttonColor,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(30),
+        ),
+        child: Image.asset(imgUrl),
+        onPressed: () async {
+          if (await canLaunch(url)) {
+            await launch(url);
+          }
+        },
+      ),
+      constraints: BoxConstraints(maxHeight: 30, maxWidth: 30),
+    );
+  }
 }
